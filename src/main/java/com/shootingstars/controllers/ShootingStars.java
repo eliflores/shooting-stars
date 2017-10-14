@@ -7,14 +7,13 @@ import com.shootingstars.services.WeatherService;
 import com.shootingstars.utils.DateUtils;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+//TODO Move the below to a prettier place
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class ShootingStars {
 
@@ -33,6 +32,16 @@ public class ShootingStars {
 
         List<StarShowerResult> starShowerResults = shootingStarService.filterStarShowerResults(formattedDate, latitude);
         weatherService.weatherResults();
-        return new ArrayList<>();
+        return getResults();
+    }
+
+    private List<Result> getResults() {
+        List<Result> results = new ArrayList<>();
+        Result result = new Result();
+        result.setDate(DateTime.now());
+        result.setLatitude(12.0);
+        result.setLongitude(13.0);
+        results.add(result);
+        return results;
     }
 }
