@@ -19,9 +19,9 @@ public class CsvReader {
     private static final String METEOR_SHOWERS_CSV_FILE = "meteorShowers.csv";
     public static final int CURRENT_YEAR = 2017;
 
-    public List<StarShowerResult> parse() {
+    public List<StarShowerResult> parse(String filename) {
         try {
-            Reader in = new FileReader(getClass().getResource(METEOR_SHOWERS_CSV_FILE).getPath());
+            Reader in = new FileReader(getClass().getResource(filename).getPath());
             List<CSVRecord> records = CSVFormat.RFC4180.parse(in).getRecords();
             return readRecords(records);
         } catch (IOException e) {
@@ -36,7 +36,7 @@ public class CsvReader {
             starShowerResult.setStartDate(fromDateString(record.get(1)));
             starShowerResult.setEndDate(fromDateString(record.get(2)));
             starShowerResult.setPeakDate(fromDateString(record.get(3)));
-            starShowerResult.setDeclination(Integer.valueOf(record.get(5)));
+            starShowerResult.setDeclination(Integer.parseInt(record.get(5)));
             starShowerResult.setRating(Rating.fromString(record.get(8)));
             return starShowerResult;
         }).collect(Collectors.toList());
