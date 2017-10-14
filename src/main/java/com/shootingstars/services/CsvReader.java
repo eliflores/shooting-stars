@@ -1,8 +1,8 @@
 package com.shootingstars.services;
 
 import com.shootingstars.exceptions.ShootingStarsException;
-import com.shootingstars.shootingstars.models.Rating;
-import com.shootingstars.shootingstars.models.StarShowerResult;
+import com.shootingstars.models.Rating;
+import com.shootingstars.models.StarShowerResult;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 import org.joda.time.DateTime;

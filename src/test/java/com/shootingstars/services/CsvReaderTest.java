@@ -1,6 +1,6 @@
 package com.shootingstars.services;
 
-import com.shootingstars.shootingstars.models.StarShowerResult;
+import com.shootingstars.models.StarShowerResult;
 import org.junit.Test;
 
 import java.util.List;

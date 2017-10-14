@@ -1,4 +1,4 @@
-package com.shootingstars.shootingstars.models;
+package com.shootingstars.models;
 
 public enum Rating {
 
