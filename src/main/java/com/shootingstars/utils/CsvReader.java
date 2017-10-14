@@ -25,7 +25,7 @@ public class CsvReader {
             List<CSVRecord> records = CSVFormat.RFC4180.parse(in).getRecords();
             return readRecords(records);
         } catch (IOException e) {
-            throw new ShootingStarsException(e.getMessage(), e.getCause());
+            throw ShootingStarsException.exception(e.getMessage(), e.getCause());
         }
     }
 
@@ -46,5 +46,4 @@ public class CsvReader {
         DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd");
         return formatter.parseDateTime(CURRENT_YEAR + "-" + dateString);
     }
-
 }
