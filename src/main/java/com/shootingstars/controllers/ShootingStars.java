@@ -28,6 +28,7 @@ public class ShootingStars {
 
 
         List<StarShowerResult> starShowerResults = shootingStarService.filterStarShowerResults(formattedDate, latitude);
+        shootingStarService.weatherResults();
         return new ArrayList<>();
     }
 }

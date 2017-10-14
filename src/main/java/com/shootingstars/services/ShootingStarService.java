@@ -1,8 +1,10 @@
 package com.shootingstars.services;
 
+import com.shootingstars.clients.WeatherClient;
 import com.shootingstars.models.StarShowerResult;
 import com.shootingstars.utils.CsvReader;
 import org.joda.time.DateTime;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -11,6 +13,17 @@ import java.util.List;
 @Service
 public class ShootingStarService {
     private static final String METEOR_SHOWERS_CSV_FILE = "meteorShowers.csv";
+
+    private final WeatherClient weatherClient;
+
+    @Autowired
+    public ShootingStarService(WeatherClient weatherClient) {
+        this.weatherClient = weatherClient;
+    }
+
+    public void weatherResults() {
+        weatherClient.getWeatherResults();
+    }
 
     public List<StarShowerResult> filterStarShowerResults(DateTime date, double lat) {
         CsvReader reader = new CsvReader();
@@ -29,17 +42,17 @@ public class ShootingStarService {
         for (StarShowerResult starShowerResult : listOfStarshowerResults) {
             DateTime startDate = starShowerResult.getStartDate();
             DateTime endDate = starShowerResult.getEndDate();
-            if((upperRangeDate.isAfter(startDate) || upperRangeDate.isEqual(startDate))
-            && (lowerRangeDate.isBefore(endDate) || lowerRangeDate.isEqual(endDate))){
+            if ((upperRangeDate.isAfter(startDate) || upperRangeDate.isEqual(startDate))
+                    && (lowerRangeDate.isBefore(endDate) || lowerRangeDate.isEqual(endDate))) {
                 filteredList.add(starShowerResult);
             }
         }
         return filteredList;
     }
 
-    private List<StarShowerResult> filterStarShowerResultsByHemisphere(double lat, List<StarShowerResult>listOfStarshowerResults) {
+    private List<StarShowerResult> filterStarShowerResultsByHemisphere(double lat, List<StarShowerResult> listOfStarshowerResults) {
         List<StarShowerResult> filteredList = new ArrayList<>();
-        for (StarShowerResult starShowerResult: listOfStarshowerResults) {
+        for (StarShowerResult starShowerResult : listOfStarshowerResults) {
             if (starShowerResult.getDeclination() * lat >= 0)
                 filteredList.add(starShowerResult);
         }
