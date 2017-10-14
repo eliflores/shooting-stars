@@ -1,4 +1,4 @@
-package com.shootingstars.services;
+package com.shootingstars.utils;
 
 import com.shootingstars.exceptions.ShootingStarsException;
 import com.shootingstars.models.Rating;
@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class CsvReader {
-    private static final String METEOR_SHOWERS_CSV_FILE = "meteorShowers.csv";
+
     public static final int CURRENT_YEAR = 2017;
 
     public List<StarShowerResult> parse(String filename) {
