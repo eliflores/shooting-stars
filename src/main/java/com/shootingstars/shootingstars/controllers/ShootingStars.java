@@ -13,6 +13,8 @@ public class ShootingStars {
     @RequestMapping(value = "/options", method = RequestMethod.GET, produces = "application/json")
     public Result getOptions(@RequestParam("lat") double latitude, @RequestParam("long") double longitude,
                              @RequestParam("date") String date) {
+
+
         return new Result();
     }
 }
