@@ -10,6 +10,7 @@ public class WeatherResult {
 
     Clouds clouds;
     String dateTimeString;
+    Coordinates coordinates;
 
     public Clouds getClouds() {
         return clouds;
@@ -27,4 +28,14 @@ public class WeatherResult {
     public void setDateTime(String dateTime) {
         this.dateTimeString = dateTime;
     }
+
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(Coordinates coordinates) {
+        this.coordinates = coordinates;
+    }
+
+
 }
