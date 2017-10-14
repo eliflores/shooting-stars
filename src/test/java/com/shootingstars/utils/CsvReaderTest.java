@@ -1,7 +1,6 @@
-package com.shootingstars.services;
+package com.shootingstars.utils;
 
 import com.shootingstars.models.StarShowerResult;
-import com.shootingstars.utils.CsvReader;
 import org.junit.Test;
 
 import java.util.List;
