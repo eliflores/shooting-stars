@@ -10,4 +10,9 @@ public class DateUtils {
         DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd");
         return formatter.parseDateTime(dateString);
     }
+
+    public static DateTime fromDateStringWithTime(String dateString) {
+        DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss");
+        return formatter.parseDateTime(dateString);
+    }
 }

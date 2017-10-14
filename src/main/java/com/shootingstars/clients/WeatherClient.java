@@ -1,8 +1,12 @@
 package com.shootingstars.clients;
 
 import com.shootingstars.http.HttpClient;
+import com.shootingstars.json.JsonReader;
+import com.shootingstars.models.WeatherResult;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class WeatherClient {
@@ -24,6 +28,7 @@ public class WeatherClient {
         String requestParams = String.format(QUERY_PARAMS, 35, 139, apiKey);
         String request = WEATHER_API_URL + FORECAST_WEATHER_PATH + requestParams;
         String response = new HttpClient().sendGetRequest(request);
+        List<WeatherResult> listOfWeatherResults = JsonReader.fromJsonList(response, WeatherResult.class);
         System.out.println(response);
     }
 }

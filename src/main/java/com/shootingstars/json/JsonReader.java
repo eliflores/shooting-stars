@@ -15,7 +15,7 @@ public class JsonReader {
         OBJECT_MAPPER = new ObjectMapper();
     }
 
-    public <T> T fromJson(String json, Class<T> clazz) {
+    public static <T> T fromJson(String json, Class<T> clazz) {
         JavaType javaType = getObjectMapper().getTypeFactory().constructType(clazz);
         try {
             return getObjectMapper().readValue(json, javaType);
@@ -25,7 +25,7 @@ public class JsonReader {
     }
 
 
-    public <T> List<T> fromJsonList(String jsonArray, Class<T> clazz) {
+    public static <T> List<T> fromJsonList(String jsonArray, Class<T> clazz) {
         final CollectionType javaType = getObjectMapper().getTypeFactory().constructCollectionType(List.class, clazz);
         try {
             return getObjectMapper().readValue(jsonArray, javaType);
