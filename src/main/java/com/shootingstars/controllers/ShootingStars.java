@@ -27,6 +27,7 @@ public class ShootingStars {
         DateTime formattedDate = DateUtils.fromDateString(date);
 
 
-List<StarShowerResult> starShowerResults = shootingStarService.filterStarShowerResults(formattedDate, latitude);        return new ArrayList<>();
+        List<StarShowerResult> starShowerResults = shootingStarService.filterStarShowerResults(formattedDate, latitude);
+        return new ArrayList<>();
     }
 }
