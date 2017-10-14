@@ -17,5 +17,4 @@ public class CsvReaderTest {
         assertEquals(5, result.size());
         assertThat(result.get(0).getName(), is("Quadrantiden"));
     }
-
 }
