@@ -2,6 +2,7 @@ package com.shootingstars.controllers;
 
 import com.shootingstars.models.Result;
 import com.shootingstars.models.StarShowerResult;
+import com.shootingstars.models.WeatherResult;
 import com.shootingstars.services.ShootingStarService;
 import com.shootingstars.services.WeatherService;
 import com.shootingstars.utils.DateUtils;
@@ -31,7 +32,7 @@ public class ShootingStars {
 
 
         List<StarShowerResult> starShowerResults = shootingStarService.filterStarShowerResults(formattedDate, latitude);
-        weatherService.weatherResults();
+        List<WeatherResult> weatherResults = weatherService.weatherResults(latitude, longitude);
         return getResults();
     }
 
