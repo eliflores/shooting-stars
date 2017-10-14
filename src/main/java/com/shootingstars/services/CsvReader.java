@@ -10,10 +10,6 @@ import java.io.Reader;
 public class CsvReader {
     private static final String METEOR_SHOWERS_CSV_FILE = "meteorShowers.csv";
 
-    public static void main(String[] args) {
-        new CsvReader().parse();
-    }
-
     public void parse() {
         try {
             Reader in = new FileReader(getClass().getResource(METEOR_SHOWERS_CSV_FILE).getPath());
