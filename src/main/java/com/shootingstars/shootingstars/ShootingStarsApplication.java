@@ -9,4 +9,6 @@ public class ShootingStarsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ShootingStarsApplication.class, args);
 	}
+
+
 }
