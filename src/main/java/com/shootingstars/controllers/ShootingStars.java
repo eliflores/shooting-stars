@@ -1,6 +1,6 @@
-package com.shootingstars.shootingstars.controllers;
+package com.shootingstars.controllers;
 
-import com.shootingstars.shootingstars.models.Result;
+import com.shootingstars.models.Result;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
