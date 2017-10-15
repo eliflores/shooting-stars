@@ -6,10 +6,11 @@ This repository contains the Backend for the `Shooting Stars` app that we built 
 Our Front-end code is located [here](https://github.com/mignonnesaurus/shooting-stars-web).
 
 # How to play with our back-end.
-1. Add your own API key:
+
+1. Clone the repository
+2. Add your own API key:
     `cp src/main/resources/application.properties.sample src/main/resources/application.properties`
-    
-2. Request Mapping:
+3. Request Mapping:
     `<SERVER_URL:PORT>/options?lat=<LATITUDE>&long=<LONGITUDE>&date=<DATE_IN_yyyy_MM_dd_FORMAT>`
     
     
@@ -21,3 +22,9 @@ Our Front-end code is located [here](https://github.com/mignonnesaurus/shooting-
 ### Libraries
 * [Jackson 2.7.3](https://github.com/FasterXML/jackson)
 * [Joda Time 2.9.9](http://www.joda.org/joda-time/)
+
+## Team
+* [Saba](https://github.com/Hummel23)
+* [Rike](https://github.com/gitfrosh)
+* [Julia](https://github.com/jvolmer)
+* [Ely](https://github.com/mignonnesaurus)
