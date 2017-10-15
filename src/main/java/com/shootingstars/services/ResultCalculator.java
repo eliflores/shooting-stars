@@ -32,14 +32,18 @@ public class ResultCalculator {
         List<Result> finalResults = new ArrayList<>();
         for (WeatherResult weatherResult : listOfBestResultsPerLocation) {
             Coordinates coordinates = weatherResult.getCoordinates();
-            DateTime dateTime = weatherResult.getDateTime();
 
-            Result result = new Result();
-            result.setLatitude(coordinates.getLatitude());
-            result.setLatitude(coordinates.getLongitude());
-            result.setDateTime(dateTime);
+            if (coordinates != null) {
+                DateTime dateTime = weatherResult.getDateTime();
 
-            finalResults.add(result);
+                Result result = new Result();
+                result.setLatitude(coordinates.getLatitude());
+                result.setLatitude(coordinates.getLongitude());
+                result.setDateTime(dateTime);
+
+                finalResults.add(result);
+            }
+
         }
         return finalResults;
     }
@@ -59,13 +63,14 @@ public class ResultCalculator {
             }
         }
         return resultClosestToPeakdate;
-        }
+    }
 
 
     private WeatherResult getResultWithDistanceToPeak(int minimumDistanceToPeakDate, List<WeatherResult> weatherResultsForOneLocation, DateTime starShowerResultsDate) {
         for (WeatherResult weatherResultForOneDay : weatherResultsForOneLocation) {
-            if (starShowerResultsDate.plus(minimumDistanceToPeakDate) == weatherResultForOneDay.getDateTime()
-                    || starShowerResultsDate.minus(minimumDistanceToPeakDate) == weatherResultForOneDay.getDateTime()) {
+            if (starShowerResultsDate.plus(minimumDistanceToPeakDate).isAfter(weatherResultForOneDay.getDateTime())
+                    || starShowerResultsDate.minus(minimumDistanceToPeakDate).isBefore(weatherResultForOneDay
+                    .getDateTime())) {
                 return weatherResultForOneDay;
             }
         }
