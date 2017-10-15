@@ -10,12 +10,11 @@ import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.Arrays.asList;
 
-//TODO Move the below to a prettier place
+//TODO Move to a better place
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class ShootingStars {
@@ -38,22 +37,22 @@ public class ShootingStars {
 
         //for testing
         Result result1 = new Result();
-        result1.setDate(formattedDate);
+        result1.setDateTime(formattedDate);
         result1.setLatitude(latitude);
         result1.setLongitude(longitude);
 
         Result result2 = new Result();
-        result2.setDate(formattedDate.plusDays(2));
+        result2.setDateTime(formattedDate.plusDays(2));
         result2.setLatitude(latitude + 0.5);
         result2.setLongitude(longitude);
 
         Result result3 = new Result();
-        result3.setDate(formattedDate.plusDays(4));
+        result3.setDateTime(formattedDate.plusDays(4));
         result3.setLatitude(latitude);
         result3.setLongitude(longitude + 1.0);
 
         Result result4 = new Result();
-        result4.setDate(formattedDate.plusDays(8));
+        result4.setDateTime(formattedDate.plusDays(8));
         result4.setLatitude(latitude -1.5);
         result4.setLongitude(longitude + 0.5);
 

@@ -1,18 +1,22 @@
 package com.shootingstars.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.shootingstars.utils.DateUtils;
 import org.joda.time.DateTime;
 
 public class Result {
     private double latitude;
     private double longitude;
-    DateTime date;
+    private DateTime dateTime;
+    private String date;
 
-    public DateTime getDate() {
-        return date;
+    @JsonIgnore
+    public DateTime getDateTime() {
+        return dateTime;
     }
 
-    public void setDate(DateTime date) {
-        this.date = date;
+    public void setDateTime(DateTime dateTime) {
+        this.dateTime = dateTime;
     }
 
     public double getLatitude() {
@@ -29,5 +33,9 @@ public class Result {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    public String getDate() {
+        return DateUtils.formatDate(dateTime);
     }
 }
