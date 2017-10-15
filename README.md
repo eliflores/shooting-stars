@@ -21,4 +21,3 @@ Our Front-end code is located [here](https://github.com/mignonnesaurus/shooting-
 ### Libraries
 * [Jackson 2.7.3](https://github.com/FasterXML/jackson)
 * [Joda Time 2.9.9](http://www.joda.org/joda-time/)
-* 
