@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.shootingstars.utils.DateUtils;
 import org.joda.time.DateTime;
 
-@JsonIgnoreProperties({"dt", "main", "weather", "wind", "rain", "sys"})
+@JsonIgnoreProperties({"dt", "main", "weather", "wind", "rain", "sys", "snow"})
 public class WeatherResult {
 
     Clouds clouds;
