@@ -5,7 +5,7 @@ This repository contains the Backend for the `Shooting Stars` app that we built 
 
 Our Front-end code is [here](https://github.com/mignonnesaurus/shooting-stars-web).
 
-# How to play with our back-end.
+## How to play with our back-end.
 
 1. Clone the repository
 2. Add your own API key:
@@ -14,16 +14,16 @@ Our Front-end code is [here](https://github.com/mignonnesaurus/shooting-stars-we
     `<SERVER_URL:PORT>/options?lat=<LATITUDE>&long=<LONGITUDE>&date=<DATE_IN_yyyy_MM_dd_FORMAT>`
     
     
-## Tech Stack
+### Tech Stack
 
 * [Java 8](https://www.java.com/en/download/faq/java8.xml)
 * [Spring Boot 1.5.7](https://spring.io/blog/2017/09/12/spring-boot-1-5-7-available-now)
 
-### Libraries
+#### Libraries
 * [Jackson 2.7.3](https://github.com/FasterXML/jackson)
 * [Joda Time 2.9.9](http://www.joda.org/joda-time/)
 
-## Team
+### Team
 * [Saba](https://github.com/Hummel23)
 * [Rike](https://github.com/gitfrosh)
 * [Julia](https://github.com/jvolmer)
