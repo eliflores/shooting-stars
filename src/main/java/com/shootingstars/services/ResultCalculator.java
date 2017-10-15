@@ -37,7 +37,7 @@ public class ResultCalculator {
             Result result = new Result();
             result.setLatitude(coordinates.getLatitude());
             result.setLatitude(coordinates.getLongitude());
-            result.setDate(dateTime);
+            result.setDateTime(dateTime);
 
             finalResults.add(result);
         }
