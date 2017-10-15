@@ -2,7 +2,7 @@ package com.shootingstars.models;
 
 public enum Rating {
 
-    STARK("Stark"), MITTEL("Mittel"), SCHWACH("Schwach"), IRREGULAR("Irregular");
+    STARK("Stark"), MITTEL("Mittel"), SCHWACH("Schwach");
 
     String stringValue;
 

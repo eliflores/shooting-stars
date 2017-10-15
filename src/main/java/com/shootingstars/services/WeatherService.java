@@ -15,12 +15,16 @@ public class WeatherService {
     @Autowired
     private WeatherClient weatherClient;
 
-    public List<WeatherResult> weatherResults(double latitude, double longitude) {
+    public List<List<WeatherResult>> weatherResults(double latitude, double longitude) {
 
         List<Coordinates> coordinates = getRelevantCoordinates(latitude, longitude);
-        List<WeatherResult> weatherResultsWithGoodVisibilityForAllLocations = new ArrayList<>();
+        List<List<WeatherResult>> weatherResultsWithGoodVisibilityForAllLocations = new ArrayList<>();
         for (Coordinates coordinate : coordinates) {
-            weatherResultsWithGoodVisibilityForAllLocations.addAll(weatherClient.getWeatherResults(coordinate));
+            List<WeatherResult> weatherResultsForOneLocation = weatherClient.getWeatherResults(coordinate);
+            if (!weatherResultsForOneLocation.isEmpty()) {
+                weatherResultsWithGoodVisibilityForAllLocations.add(weatherResultsForOneLocation);
+            }
+
         }
 
         return weatherResultsWithGoodVisibilityForAllLocations;
