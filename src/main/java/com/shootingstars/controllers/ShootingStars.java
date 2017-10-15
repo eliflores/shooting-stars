@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.util.Arrays.asList;
+
 //TODO Move the below to a prettier place
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -33,16 +35,28 @@ public class ShootingStars {
 
         List<StarShowerResult> starShowerResults = shootingStarService.filterStarShowerResults(formattedDate, latitude);
         List<WeatherResult> weatherResults = weatherService.weatherResults(latitude, longitude);
-        return getResults();
-    }
 
-    private List<Result> getResults() {
-        List<Result> results = new ArrayList<>();
-        Result result = new Result();
-        result.setDate(DateTime.now());
-        result.setLatitude(12.0);
-        result.setLongitude(13.0);
-        results.add(result);
-        return results;
+        //for testing
+        Result result1 = new Result();
+        result1.setDate(formattedDate);
+        result1.setLatitude(latitude);
+        result1.setLongitude(longitude);
+
+        Result result2 = new Result();
+        result2.setDate(formattedDate.plusDays(2));
+        result2.setLatitude(latitude + 0.5);
+        result2.setLongitude(longitude);
+
+        Result result3 = new Result();
+        result3.setDate(formattedDate.plusDays(4));
+        result3.setLatitude(latitude);
+        result3.setLongitude(longitude + 1.0);
+
+        Result result4 = new Result();
+        result4.setDate(formattedDate.plusDays(8));
+        result4.setLatitude(latitude -1.5);
+        result4.setLongitude(longitude + 0.5);
+
+        return asList(result1, result2, result3, result4);
     }
 }
