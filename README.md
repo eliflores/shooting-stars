@@ -15,5 +15,10 @@ Our Front-end code is located [here](https://github.com/mignonnesaurus/shooting-
     
 ## Tech Stack
 
-* Java 8
-* Spring Boot 1.5.7
+* [Java 8](https://www.java.com/en/download/faq/java8.xml)
+* [Spring Boot 1.5.7](https://spring.io/blog/2017/09/12/spring-boot-1-5-7-available-now)
+
+### Libraries
+* [Jackson 2.7.3](https://github.com/FasterXML/jackson)
+* [Joda Time 2.9.9](http://www.joda.org/joda-time/)
+* 
