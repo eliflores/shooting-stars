@@ -1,6 +1,11 @@
-# shooting-stars
+# Shooting Stars
 
-# How to
+This repository contains the Backend for the `Shooting Stars` app that we built for the [Hack Like a Girl Hackathon]
+(http://www.hacklikeagirl.co/).
+
+Our Front-end code is located [here](https://github.com/mignonnesaurus/shooting-stars-web).
+
+# How to play with our back-end.
 1. Add your own API key:
     `cp src/main/resources/application.properties.sample src/main/resources/application.properties`
     
