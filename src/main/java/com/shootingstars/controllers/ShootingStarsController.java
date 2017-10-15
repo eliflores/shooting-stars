@@ -14,18 +14,18 @@ import java.util.List;
 
 import static java.util.Arrays.asList;
 
-//TODO Move to a better place
-@CrossOrigin(origins = "http://localhost:3000")
 @RestController
-public class ShootingStars {
+public class ShootingStarsController {
+    private final ShootingStarService shootingStarService;
+    private final WeatherService weatherService;
 
     @Autowired
-    ShootingStarService shootingStarService;
+    public ShootingStarsController(ShootingStarService shootingStarService, WeatherService weatherService) {
+        this.shootingStarService = shootingStarService;
+        this.weatherService = weatherService;
+    }
 
-    @Autowired
-    WeatherService weatherService;
-
-    // http://localhost:8080/options?lat=12.0&long=13.0&date=2017-12-10
+    @CrossOrigin
     @RequestMapping(value = "/options", method = RequestMethod.GET, produces = "application/json")
     public List<Result> getOptions(@RequestParam("lat") double latitude, @RequestParam("long") double longitude,
                                    @RequestParam("date") String date) {
