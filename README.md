@@ -1,7 +1,6 @@
 # Shooting Stars
 
-This repository contains the Backend for the `Shooting Stars` app that we built for the [Hack Like a Girl Hackathon]
-(http://www.hacklikeagirl.co/).
+This repository contains the Backend for the `Shooting Stars` app that we built for the [Hack Like a Girl Hackathon](http://www.hacklikeagirl.co/).
 
 Our Front-end code is [here](https://github.com/mignonnesaurus/shooting-stars-web).
 
