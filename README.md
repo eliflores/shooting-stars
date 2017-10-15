@@ -11,3 +11,9 @@ Our Front-end code is located [here](https://github.com/mignonnesaurus/shooting-
     
 2. Request Mapping:
     `<SERVER_URL:PORT>/options?lat=<LATITUDE>&long=<LONGITUDE>&date=<DATE_IN_yyyy_MM_dd_FORMAT>`
+    
+    
+## Tech Stack
+
+* Java 8
+* Spring Boot 1.5.7
