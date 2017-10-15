@@ -13,6 +13,7 @@ import java.util.List;
 @Service
 public class ResultCalculator {
 
+    private static final int MAX_NUMBER_OF_RESULTS = 5;
 
     public List<Result> getResult(StarShowerResult starShowerResult, List<List<WeatherResult>> weatherResults) {
 
@@ -30,11 +31,12 @@ public class ResultCalculator {
 
     private List<Result> transformToListOfResults(List<WeatherResult> listOfBestResultsPerLocation) {
         List<Result> finalResults = new ArrayList<>();
-        for (WeatherResult weatherResult : listOfBestResultsPerLocation) {
-            Coordinates coordinates = weatherResult.getCoordinates();
+
+        for (int i = 0; i < Math.min(listOfBestResultsPerLocation.size(), MAX_NUMBER_OF_RESULTS); i++) {
+            Coordinates coordinates = listOfBestResultsPerLocation.get(i).getCoordinates();
 
             if (coordinates != null) {
-                DateTime dateTime = weatherResult.getDateTime();
+                DateTime dateTime = listOfBestResultsPerLocation.get(i).getDateTime();
 
                 Result result = new Result();
                 result.setLatitude(coordinates.getLatitude());
